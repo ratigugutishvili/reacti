@@ -1,0 +1,15 @@
+.expensee{
+    width: 100%;
+    border: 1px red solid;
+    height: auto;
+    position: relative;
+}
+.for-new{
+    position: absolute;
+    top: 2px;
+    right: 60px;
+}
+
+.expense{
+    background-color: red;
+}

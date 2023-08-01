@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+*
+{
+    font-family: Montserrat Alternates;
+}
+
+/* body
+{
+    background-color: rgb(57, 67, 77);
+} */
+*
+{
+    box-sizing: border-box;
+}
+.filter
+{
+    margin-top: 20px;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: rgb(62, 88, 88);
+    height: 100px;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.filter button:hover
+{
+    cursor: pointer;
+}
+
+.btn
+{
+    width: 80px;
+    height: 35px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.filter-1
+{
+    display: flex;
+    gap: 100px;
+}
+
+#min:focus {
+    outline: none;
+}
+
+#min
+{
+    background-color: transparent;
+    border: 0;
+    width: 50px;
+}
+
+#max:focus {
+    outline: none;
+}
+
+#max
+{
+    background-color: transparent;
+    border: 0;
+    width: 50px;
+}
+
+
+.main
+{
+    border: 3px solid rgb(66, 34, 34);
+    display: grid;
+    grid-template-columns: 450px auto;
+    margin-top: 30px;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+.list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 15px;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+
+.first
+{
+    padding-left: 20px;
+    border-radius: 15px;
+    width: 400px;
+    height: 150px;
+    margin-top: 50px;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    color: antiquewhite;
+    position: relative;
+}
+
+.first button
+{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: white;
+    border: 0;
+    font-size: large;
+}
+
+.first button:hover
+{
+    cursor: pointer;
+}
+
+
+.first p 
+{
+    margin: 10px;
+}
+
+
+.mid
+{
+    position: relative;
+}
+
+.first a
+{
+    position: absolute;
+    right: 20px;
+    bottom: 16px;
+}
+
+
+.inc-exp
+{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.inc-expdiv
+{
+    margin-top: 50px;
+    width: 300px;
+    height: 200px;
+    background-color: rgb(100, 81, 81);
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.inc-exp div p
+{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.inc-exp div ul
+{
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style-type: none;
+}
+ul li
+{
+    display: flex;
+    gap: 70px;
+}
+
+.top
+{
+    margin-top: 40px; 
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    background-color: rgb(26, 4, 4);
+    border-radius: 15px;
+    padding-top: 1px;
+}
+
+.top p 
+{
+    color: wheat;
+    font-size: larger;
+}
+
+.top ul
+{
+    color: wheat;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style-type: none;
+}
+
+.btn-2 a
+{
+    color: white;
+    text-decoration: none;
+}
+.btn-2
+{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.for-c
+{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form
+{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 15px;
+    background-color: rgb(97, 94, 94);
+    width: 350px;
+    height: 600px;
+    padding: 25px;
+}
+
+.categ
+{
+    color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.categ p 
+{
+    font-size: larger;
+}
+
+.type-2
+{
+    color: wheat;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 15px;
+}
+
+.date-2
+{
+    color: wheat;
+    font-size: larger;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount-2
+{
+    display: flex;
+    color: wheat;
+    gap: 15px;
+}
+.agharvici
+{
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid wheat;
+}
+.agharvici:focus {
+    outline: none;
+}
+
+
+.damn
+{
+    color: white;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid wheat;
+}
+
+.damn:focus {
+    outline: none;
+}
+
+.transition
+{
+    margin-top: 40px;
+    background-color: aqua;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.svg
+{
+    width: 35px;
+    height: 35px;
+}
+
+
+.here-to-check{
+    color: red;
+    display: inline-block;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.forscroll{
+    height: 500px;
+    display: flex;
+}
+
+.foree{
+    height: 100%;
+    overflow-y: scroll;
+}
