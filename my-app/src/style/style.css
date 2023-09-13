@@ -328,6 +328,28 @@ ul li
 }
 
 .foree{
+    width: 400px;
     height: 100%;
     overflow-y: scroll;
+}
+
+.for-top{
+    width: 300px;
+    height: 200px;
+    background-color: red;
+    
+}
+
+.for-img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#testing{
+    width: 200px;
+    color: grey;
 }

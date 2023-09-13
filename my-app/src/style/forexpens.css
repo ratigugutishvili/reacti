@@ -13,3 +13,34 @@
 .expense{
     background-color: red;
 }
+.for-tops{
+    width: 260px;
+    height: 200px;
+    background-color: red;
+    border-radius: 30px;
+    margin-top: 40px;
+}
+.schalf{
+    gap: 80px;
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+.margina{
+    margin-left: 150px;
+}
+.forme{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+    font-size: 23px;
+    color: lightgreen;
+}
+
+.p-for-income{
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+    margin-top: 9px;
+    margin-bottom: 9px;
+}

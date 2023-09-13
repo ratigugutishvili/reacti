@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom'
+import Select from "react-select"
 import React from "react";
+
 
 const Add = ()=>{
     const navigate = useNavigate()
     var expenses = readLocalStorage()
     const [type,settype] = useState('')
-    const [amount,setamount] = useState(0)
+    const [amount,setamount] = useState('')
     const [date,setdate] = useState('')
     const [income, setincome] = useState(false)
     const [expense, setexpense] = useState(false)
@@ -21,7 +23,15 @@ const Add = ()=>{
             setincome(false)
         }
     },[expense])
-
+    const option = [
+        {value: "bank", label: 'bank'},
+        {value:"gym", label: 'gym'},
+        {value:"debt", label: 'debt'},
+    ]
+    const opitons = [
+        {value:"salary", label:'salary'},
+        {value:'invoice', label:'invoice'}
+    ]
     useEffect(()=>{
         if (income) {
             setexpense(false)
@@ -38,14 +48,17 @@ const Add = ()=>{
             execttype: type,
             amount:amount
         })
+
         localStorage.setItem('expenses', JSON.stringify(expenses))
         settype('')
-        setamount(0)
+        setamount('')
         setdate('')
         setexpense(false)
         setincome(false)
     }
-
+    const handlerchange = (selectedoption)=>{
+        settype(selectedoption.value)
+    }
     function navito(){
         navigate('/home')
     }
@@ -68,7 +81,9 @@ const Add = ()=>{
             <div class="type-2">
                 <p>type:</p>
                 <div id="testing">
-                    <input list="browsers" name="browser" class="damn" id="type" value={type} onChange={(e)=>{settype(e.target.value)}} />
+                    {expense && <Select options={option}  onChange={handlerchange}  />}
+                    {income && <Select options={opitons} onChange={handlerchange} /> }
+                    {income == expense && <Select options={opitons} onChange={handlerchange} />  }
                 </div>
             </div>
             <div class="amount-2">

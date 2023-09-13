@@ -43,13 +43,16 @@ const SsignUp = () => {
         }
         document.getElementById('eemail').style.color = '#11f947'
         document.getElementById('pas').style.color = '#11f947'
-        users.push({
+        var forus = {
             id: Date.now(),
             name: name,
             password: pass,
             mail: mail
-        })
+        }
+        users.push(forus)
         localStorage.setItem('users', JSON.stringify(users))
+        localStorage.setItem('userid', forus.id)
+        var userid = localStorage.getItem('userid')
        navigate("/home")
     }
     const login = () =>{
