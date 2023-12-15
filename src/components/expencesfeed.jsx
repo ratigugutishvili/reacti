@@ -179,7 +179,6 @@ function incomecheck() {
         <div>
           <button
             className="button-85 for-newe"
-            role="button"
             onClick={() => {
               logout();
             }}
@@ -189,7 +188,7 @@ function incomecheck() {
         </div>
       </div>
       <div className="expensee">
-        <button className="button-85 for-new" role="button" onClick={add}>
+        <button className="button-85 for-new" onClick={add}>
           add new
         </button>
 
@@ -244,10 +243,3 @@ function incomecheck() {
 
 export default Expensefeed;
 
-function readLocalStorage() {
-  var expenses = localStorage.getItem("expenses");
-  if (expenses === null) {
-    return [];
-  }
-  return JSON.parse(expenses);
-}

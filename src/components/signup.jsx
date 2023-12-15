@@ -20,7 +20,6 @@ const SsignUp = () => {
     const [pass, setpass] = useState('')
     const [txtforusedmail, settxtforusedmail] = useState('')
     const [txtforpass, settxtforpass] = useState('')
-    const [eror, setError] = useState("")
 
     const submita = () => {
         // var users = readLocalStorage()
@@ -57,7 +56,6 @@ const SsignUp = () => {
             if(data.mailerror){
                 document.getElementById('eemail').style.color = 'red'
                 settxtforusedmail('your email is used')
-                setError("Email exists!")
                 return
             }
             if (data.passerror) {
@@ -103,7 +101,7 @@ const SsignUp = () => {
                 <input id="email" className="input" type="password" placeholder=" " value={pass} onChange={(e) => {
                     settxtforpass('')
                     setpass(e.target.value)
-                    if (pass == "") {
+                    if (pass === "") {
                         document.getElementById('pas').style.color = '#808097'
                         return
                     }
@@ -115,15 +113,8 @@ const SsignUp = () => {
             <button type="text" className="submit" onClick={submita}>submit</button>
             <div className="rati">{txtforusedmail}</div>
             <div className="rati">{txtforpass}</div>
-            <div className="revi" onClick={login} ><a>log in</a> </div>
+            <div className="revi" onClick={login} ><a href="/login">log in</a> </div>
         </div>
         </div>
     )
-}
-function readLocalStorage() {
-    var users = localStorage.getItem('users')
-    if (users === null) {
-        return []
-    }
-    return JSON.parse(users)
 }

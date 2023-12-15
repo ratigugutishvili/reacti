@@ -16,11 +16,11 @@ const Add = ()=>{
 
     function expensecheck() {
         setradio('expense')
-        var body = {createdAt:date,type:'expense',category:type,amount:amount}
+        body = {createdAt:date,type:'expense',category:type,amount:amount}
     }
     function incomecheck() {
         setradio('income')
-        var body = {createdAt:date,type:'income',category:type,amount:amount}
+        body = {createdAt:date,type:'income',category:type,amount:amount}
     }
     const option = [
         {value: "bank", label: 'bank'},
@@ -46,7 +46,6 @@ const Add = ()=>{
     }
 
     console.log(date);
-    var userId = localStorage.getItem('userid')
 
     const handlerchange = (selectedoption)=>{
         settype(selectedoption.value)
@@ -73,9 +72,9 @@ const Add = ()=>{
             <div class="type-2">
                 <p>type:</p>
                 <div id="testing">
-                    {radiotype == 'expense' && <Select options={option}  onChange={handlerchange}  />}
-                    {radiotype == 'income'&& <Select options={opitons} onChange={handlerchange} /> }
-                    {radiotype == '' && <Select options={opitons} onChange={handlerchange} />  }
+                    {radiotype === 'expense' && <Select options={option}  onChange={handlerchange}  />}
+                    {radiotype === 'income'&& <Select options={opitons} onChange={handlerchange} /> }
+                    {radiotype === '' && <Select options={opitons} onChange={handlerchange} />  }
                 </div>
             </div>
             <div class="amount-2">
@@ -94,10 +93,3 @@ export default Add
 
 
 
-function readLocalStorage() {
-    var expenses = localStorage.getItem('expenses')
-    if (expenses === null) {
-        return []
-    }
-    return JSON.parse(expenses)
-}

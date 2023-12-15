@@ -37,7 +37,7 @@ const Rame =() =>
                 </div>
             </div>
             <div>
-            <button className="button-85 for-newe" role="button" onClick={()=>{logout()}}>
+            <button className="button-85 for-newe"  onClick={()=>{logout()}}>
                 log out
             </button>
             </div>

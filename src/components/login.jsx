@@ -12,11 +12,11 @@ const Login = ()=>{
         fetch('http://localhost:3001/signin', {method: "POST", body:JSON.stringify(body), headers: {"Content-Type": "application/json"}} )
         .then(response => response.json())
         .then(data => {
-            if(data.email == 'not'){
+            if(data.email === 'not'){
                 document.getElementById('username').style.borderColor = 'red'
                 return
             }
-            if (data.pass == 'not') {
+            if (data.pass === 'not') {
                 document.getElementById('password').style.borderColor = 'red'
                 return
             }
@@ -33,7 +33,7 @@ const Login = ()=>{
         document.getElementById('username').style.borderColor = '#a1a3a3'
         setmail(e.target.value)}} />
     <input type="password" className="inputpassword" placeholder="password" id="password" value={pass} onChange={(e) => { setpass(e.target.value)}}  />
-    <a className="forgot">forgot password?</a>
+    <a className="forgot" href="#">forgot password?</a>
     <input type="submit" className="input1" value="Sign In" onClick={check} />
     <div className="register" onClick={()=>{navigate('/')}}>register</div>
     <div class="shadow"></div>

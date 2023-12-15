@@ -16,6 +16,7 @@ const Home = ()=>{
             }
         })
         .catch(error => console.log(error + "qwerqwerqewr"));
+        //  eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return (
