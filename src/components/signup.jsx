@@ -61,7 +61,6 @@ const SsignUp = () => {
             if (data.passerror) {
                 document.getElementById('pas').style.color = 'red'
                 settxtforpass('your password is too short')
-                setError("invalid password")
                 return;
             }
             navigate('/home')
