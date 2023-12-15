@@ -33,7 +33,6 @@ const Login = ()=>{
         document.getElementById('username').style.borderColor = '#a1a3a3'
         setmail(e.target.value)}} />
     <input type="password" className="inputpassword" placeholder="password" id="password" value={pass} onChange={(e) => { setpass(e.target.value)}}  />
-    <a className="forgot" href="#">forgot password?</a>
     <input type="submit" className="input1" value="Sign In" onClick={check} />
     <div className="register" onClick={()=>{navigate('/')}}>register</div>
     <div class="shadow"></div>
