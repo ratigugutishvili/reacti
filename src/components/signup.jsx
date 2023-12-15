@@ -15,9 +15,6 @@ export default function SignUp() {
 
 const SsignUp = () => {
     const navigate = useNavigate()
-    function usedemail() { document.getElementById('eemail').style.color = 'red' }
-    function shortpass() { document.getElementById('pas').style.color = 'red' }
-    const [validpass, checkpass] = useState(true)
     const [mail, setmail] = useState('')
     const [name, setname] = useState('')
     const [pass, setpass] = useState('')
@@ -25,7 +22,6 @@ const SsignUp = () => {
     const [txtforpass, settxtforpass] = useState('')
     const [eror, setError] = useState("")
 
-    const [validmail, bool] = useState(true)
     const submita = () => {
         // var users = readLocalStorage()
         // const user = users.find(el => el.mail == mail)

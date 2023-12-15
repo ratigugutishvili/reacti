@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../style/forexpens.css";
 import ReactLogo from "../assets/cross.svg";
 import ReactLogo1 from "../assets/pen-solid.svg";

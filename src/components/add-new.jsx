@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import Select from "react-select"
 import React from "react";
@@ -6,7 +6,6 @@ import React from "react";
 
 const Add = ()=>{
     const navigate = useNavigate()
-    var expenses = readLocalStorage()
     const [type,settype] = useState('')
     const [radiotype, setradio] = useState('')
     const [amount,setamount] = useState('')

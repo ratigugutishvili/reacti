@@ -44,11 +44,3 @@ const Login = ()=>{
 }
 
 export default Login
-
-function readLocalStorage() {
-    var users = localStorage.getItem('users')
-    if (users === null) {
-        return []
-    }
-    return JSON.parse(users)
-}

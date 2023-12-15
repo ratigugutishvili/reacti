@@ -6,7 +6,6 @@ import React from "react";
 
 const Edit = ()=>{
     const navigate = useNavigate()
-    var expenses = readLocalStorage()
     const [type,settype] = useState('')
     const [radiotype, setradio] = useState('')
     const [amount,setamount] = useState('')

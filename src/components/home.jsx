@@ -1,7 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Rame from "./filter";
 import Expensefeed from "./expencesfeed";
 
 
