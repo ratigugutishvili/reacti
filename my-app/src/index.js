@@ -8,21 +8,26 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import Signup from './components/signup';
-import home from './components/home';
+import Home from './components/home';
 import Login from './components/login';
 import Add from './components/add-new';
+import Edit from './components/expenseedit';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: Signup() 
+    element: <Signup />
   },
   {
     path: "/home",
-    element: home()
+    element: <Home />
   },
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/edit/:id",
+    element: <Edit />
   },
   {
     path: "/add",

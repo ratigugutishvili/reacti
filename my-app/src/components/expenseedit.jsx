@@ -1,19 +1,44 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Select from "react-select"
 import React from "react";
 
 
-const Add = ()=>{
+const Edit = ()=>{
     const navigate = useNavigate()
     var expenses = readLocalStorage()
     const [type,settype] = useState('')
     const [radiotype, setradio] = useState('')
     const [amount,setamount] = useState('')
     const [date,setdate] = useState('')
-
+    const {id} = useParams();
     var body = {createdAt:date,type:radiotype,category:type,amount:amount}
 
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch(`http://localhost:3001/editF/${id}`, {
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${sessionStorage.getItem('token')}`,
+              },
+            });
+    
+            const data = await response.json();
+    
+            setamount(data.amount)
+            settype(data.category)
+            setdate(data.createdAt)
+            setradio(data.type)
+            console.log(data); 
+          } catch (error) {
+            console.log(error + 'qwerqwerqewr');
+          }
+        };
+    
+        fetchData();
+      },[]);
 
     function expensecheck() {
         setradio('expense')
@@ -33,8 +58,8 @@ const Add = ()=>{
         {value:'invoice', label:'invoice'}
     ]
 
-    function addexpense() {
-        fetch('http://localhost:3001/add', {method: "POST",  body:JSON.stringify(body), headers: {"Content-Type": "application/json", "Authorization":`${sessionStorage.getItem('token')}`}} )
+    function edit() {
+        fetch(`http://localhost:3001/edit/${id}`, {method: "PUT",  body:JSON.stringify(body), headers: {"Content-Type": "application/json", "Authorization":`${sessionStorage.getItem('token')}`}} )
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -46,8 +71,10 @@ const Add = ()=>{
         setamount('')
     }
 
-    console.log(date);
-    var userId = localStorage.getItem('userid')
+   
+
+
+
 
     const handlerchange = (selectedoption)=>{
         settype(selectedoption.value)
@@ -83,7 +110,7 @@ const Add = ()=>{
                 <label for="amount">amount:</label>
                 <input type="number" class="agharvici" id="amount" value={amount} onChange={(e)=>{setamount(e.target.value)}} />
             </div>
-            <button style={{marginTop: '40px'}} onClick={()=>{addexpense()}} >ADD</button>
+            <button style={{marginTop: '40px'}} onClick={()=>{edit()}} >Edit</button>
             <div onClick={navito} className="here-to-check"> here to check</div>
             <div class="transition" ><span>new transition added</span></div>
         </div>
@@ -91,7 +118,7 @@ const Add = ()=>{
     )
 }
 
-export default Add
+export default Edit
 
 
 

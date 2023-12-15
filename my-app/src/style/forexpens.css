@@ -4,11 +4,6 @@
     height: auto;
     position: relative;
 }
-.for-new{
-    position: absolute;
-    top: 2px;
-    right: 60px;
-}
 
 .expense{
     background-color: red;

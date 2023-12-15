@@ -27,33 +27,58 @@ const SsignUp = () => {
 
     const [validmail, bool] = useState(true)
     const submita = () => {
-        var users = readLocalStorage()
-        const user = users.find(el => el.mail == mail)
-        if (user != null) {
-            document.getElementById('eemail').style.color = 'red'
-            settxtforusedmail('your email is used')
-            setError("Email exists!")
-            return
-        }
-        if (pass.length < 8) {
-            document.getElementById('pas').style.color = 'red'
-            settxtforpass('your password is too short')
-            setError("invalid password")
-            return;
-        }
+        // var users = readLocalStorage()
+        // const user = users.find(el => el.mail == mail)
+        // if (user != null) {
+        //     document.getElementById('eemail').style.color = 'red'
+        //     settxtforusedmail('your email is used')
+        //     setError("Email exists!")
+        //     return
+        // }
+        // if (pass.length < 8) {
+        //     document.getElementById('pas').style.color = 'red'
+        //     settxtforpass('your password is too short')
+        //     setError("invalid password")
+        //     return;
+        // }
+        // document.getElementById('eemail').style.color = '#11f947'
+        // document.getElementById('pas').style.color = '#11f947'
+        // var forus = {
+        //     id: Date.now(),
+        //     name: name,
+        //     password: pass,
+        //     mail: mail
+        // }
+        // users.push(forus)
+        // localStorage.setItem('users', JSON.stringify(users))
+        // localStorage.setItem('userid', forus.id)
+        // var userid = localStorage.getItem('userid')
+        
+        const body = {email:mail,password:pass,username:name}
+        fetch('http://localhost:3001/register', {method: "POST", body:JSON.stringify(body), headers: {"Content-Type": "application/json"}} )
+        .then(response => response.json())
+        .then(data => {
+            if(data.mailerror){
+                document.getElementById('eemail').style.color = 'red'
+                settxtforusedmail('your email is used')
+                setError("Email exists!")
+                return
+            }
+            if (data.passerror) {
+                document.getElementById('pas').style.color = 'red'
+                settxtforpass('your password is too short')
+                setError("invalid password")
+                return;
+            }
+            navigate('/home')
+
+        })
+        .catch(error => console.log(error + "qwerqwerqewr"));
+
         document.getElementById('eemail').style.color = '#11f947'
         document.getElementById('pas').style.color = '#11f947'
-        var forus = {
-            id: Date.now(),
-            name: name,
-            password: pass,
-            mail: mail
-        }
-        users.push(forus)
-        localStorage.setItem('users', JSON.stringify(users))
-        localStorage.setItem('userid', forus.id)
-        var userid = localStorage.getItem('userid')
-       navigate("/home")
+
+    //    navigate("/home")
     }
     const login = () =>{
         navigate("/login")

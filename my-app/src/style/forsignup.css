@@ -47,6 +47,16 @@
     margin-top: 30px;
   }
   
+.register{
+  width: 300px;
+  height: 50px;
+  font-size: 23px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+
   .input {
     background-color: #303245;
     border-radius: 12px;
