@@ -121,7 +121,7 @@ function incomecheck() {
   
           const data = await response.json();
 
-
+          setExpense(data.message)
           console.log(data.message);
         } catch (error) {
           console.log(error + "qwerqwerqewr");

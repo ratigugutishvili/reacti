@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './App.css';
+import './style/forexpens.css';
+import './style/style.css';
+
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,

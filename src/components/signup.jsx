@@ -63,7 +63,7 @@ const SsignUp = () => {
                 settxtforpass('your password is too short')
                 return;
             }
-            navigate('/home')
+            navigate('/login')
 
         })
         .catch(error => console.log(error + "qwerqwerqewr"));
